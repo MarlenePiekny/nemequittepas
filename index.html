@@ -4,8 +4,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Feed - Ne me quitte pas</title>
+        <title>Feed | Projet js</title>
         <meta name=description" content="Bienvenue sur mon super site">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Playfair+Display&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="/image/favicon/favicon.ico">
         <link href="style/style.css" type="text/css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="script/index.js" defer></script>
@@ -14,19 +17,27 @@
     <body>
 
         <header>
-            Je suis le header
+            <svg class="logo" width="200" height="100" src="/image/picto/logo.svg"></svg>
         </header>
 
-        <div>
-            <h1>Bienvenue sur la page de feed d'articles</h1>
-        </div>
+        
+        <section class="feed">
+            <div>
+                <h1>Bienvenue sur la page de feed</h1>
+            </div>
 
-        <section>
-            <h2>Voici les derniers artcicles</h2>
-            <article class="post">
-                
-            </article>
-            
+            <div>
+                <h2>Voici les dernières citations</h2>
+                <div class="post-feed container ">
+                    <!-- JS boucle pour afficher les posts
+                    <div class="post">
+                        <quote class="post-content">'</quote>
+                        <h4 class="post-author"></h4>
+                        <p class="post-date"></p>
+                    </div>
+                    -->
+                </div>
+            </div>
         </section>
 
         <footer>

@@ -1,27 +1,36 @@
+//Lecture du DOM avant de faire intervenir le script
 $(document).ready(function(){
 
+    //Appel de l'API via ajax
     $.ajax({
         //L'URL de la requête 
         url: "https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand",
-
         //La méthode d'envoi (type de requête)
         method: "GET",
-
         //Le format de réponse attendu
         dataType : "json",
-
     })
 
  //Ce code sera exécuté en cas de succès - La réponse du serveur est passée à done()
 
     /*La réponse est un tableau d'objet d'article*/
-
     .done(function(response){
-        response.forEach(article => {
-            console.log(article)
-            $('.post').append(article.title['rendered'], article.content['rendered'], article['date'] );
-        });
-        
+
+    //Boucle pour afficher chacun des posts
+    response.forEach(post => {
+        $(".post-feed").after('\
+                <div class="post">\
+                    <quote class="post-content">' + post.content['rendered'] +'</quote>\
+                    <h4 class="post-author">' + post.title['rendered'] + '</h4>\
+                    <p class="post-date">' + post['date']+ '</p>\
+                </div>'); 
+    });    
+
+    /*
+        console.log(response[0].content['rendered']);
+        console.log(response[0].title['rendered']);
+        console.log(response[0]['date']);
+    */
         
     })
 
