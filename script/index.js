@@ -24,7 +24,7 @@ $(document).ready(function(){
                     <h4 class="post-author">' + post.title['rendered'] + '</h4>\
                     <p class="post-date">' + post['date']+ '</p>\
                 </div>'); 
-    });    
+    });
 
     /*
         console.log(response[0].content['rendered']);

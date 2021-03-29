@@ -40,9 +40,7 @@ footer {
     height: 15em;
 }
 
-/* Feed */
-
-.feed {
+.page {
     width: 75%;
     margin: 0 auto;
 }
@@ -51,6 +49,8 @@ footer {
     display : flex;
     flex-direction: column;
 }
+
+/* Feed */
 
 .post {
     border : 1px solid black ;
