@@ -89,12 +89,16 @@ footer {
 .dropbtn {
     background-color: silver;
     color: white;
-    padding: 1em;
+    padding: 0.5em;
     font-size: 2em;
     border: none;
     cursor: pointer;
     font-family: Playfair Display, serif;
     width: 100%;
+  }
+
+  .dropbtn:hover, .dropbtn:focus {
+    opacity: 0.8;
   }
 
 .dropdown-content {
@@ -104,6 +108,7 @@ footer {
     min-width: 1rem;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    margin: 0 auto;
 }    
 
 .dropdown-content a {
@@ -114,11 +119,8 @@ footer {
 } 
 
 .dropdown-content a:hover {background-color: grey}  
-.show {display:block;}  
+.show {display:block;}
     
-
-
-
 
   /* Classe dédiée au test des selecteurs js */
 .jsselected {
