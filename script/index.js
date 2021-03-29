@@ -1,6 +1,8 @@
 //Lecture du DOM avant de faire intervenir le script
 $(document).ready(function(){
 
+    /* ------ TRAITEMENT API POUR LE FEED------ */
+
     //Appel de l'API via ajax
     $.ajax({
         //L'URL de la requête 
@@ -26,11 +28,6 @@ $(document).ready(function(){
                 </div>'); 
     });
 
-    /*
-        console.log(response[0].content['rendered']);
-        console.log(response[0].title['rendered']);
-        console.log(response[0]['date']);
-    */
         
     })
 
@@ -46,4 +43,16 @@ $(document).ready(function(){
         
     
     });
+
+    /* ------ TRAITEMENT DU PLUGGIN POUR LE CARROUSEL ------ */
+
+    $(".single-item").slick({
+        dots: true,
+        autoplay : true,
+        arrows : true,
+    });
+
+    $("single-item").addClass("jsselected");
+
+
 });
