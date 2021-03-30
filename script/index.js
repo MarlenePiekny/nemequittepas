@@ -39,8 +39,6 @@ $(document).ready(function(){
 
     //Ce code sera exécuté que la requête soit un succès ou un échec
     .always(function(){
-        alert("Requête effectuée");
-        
     
     });
 
@@ -60,6 +58,14 @@ $(document).ready(function(){
         document.getElementById("myDropdown").classList.toggle("show");
     });
 
+    /* ------ TRAITEMENT DU FORMULAIRE ------ */
 
+    //Récupérer les données du formulaire pour les mettre dans la console
+    $("#formSubmit").on("click", function() {
+        console.log(document.forms["myForm"].elements["postName"].value);
+        console.log(document.forms["myForm"].elements["postContent"].value);
+        console.log(document.forms["myForm"].elements["postDate"].value);
+    });
    
+
 });
