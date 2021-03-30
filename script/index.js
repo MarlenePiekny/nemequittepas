@@ -52,7 +52,14 @@ $(document).ready(function(){
         arrows : true,
     });
 
-    $("single-item").addClass("jsselected");
+    /* ------ TRAITEMENT DU DROPDOWN MENU ------ */
+
+    
+    //Fonction qui active les éléments contenus dans la classe dropdown-content
+    $(".dropbtn").on("click", function() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    });
 
 
+   
 });

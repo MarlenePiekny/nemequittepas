@@ -4,19 +4,54 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jeu - Ne me quitte pas</title>
-        <meta name=description" content="Bienvenue sur mon super site">
-        <link href="style/style.css" type="text/css" rel="stylesheet">
+        <title>Accueil | Projet js</title>
+        <meta name=description" content="Bienvenue sur la page d'accueil de mon site">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Playfair+Display&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="/image/favicon/favicon.ico">
+        <link href="/style/style.css" type="text/css" rel="stylesheet">
+    
+        <!-- bibliothèque jquery et script js-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/script/index.js" defer></script>
+    
+        <!--meta pour carrousel-->
+        <link rel="stylesheet" type="text/css" href="/resource/slick-1.8.1/slick/slick.css"/> <!-- css slick-->
+        <link rel="stylesheet" type="text/css" href="/resource/slick-1.8.1/slick/slick-theme.css"/> <!-- css slick par défaut-->
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js" defer></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js" defer></script>
+        <script type="text/javascript" src="/resource/slick-1.8.1/slick/slick.min.js" defer></script>
+    
     </head>
 
     <body>
 
         <header>
-            Je suis le header
+            <svg class="logo" width="200" height="100" src="/image/picto/logo.svg"></svg>
         </header>
 
+        <div class="content">
+
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="/index.html">Accueil</a>
+              <a href="/page/galerie.html">Galerie</a>
+              <a href="/page/jeu.html">Jeu</a>
+            </div>
+          </div>
+        
+          <section class="page jeu">
+            <div>
+                <h1>Bienvenue sur le jeu du pierre feuille ciseaux</h1>
+            </div>
+    
+            
+        </section>
+
+
         <footer>
-            Je suis le footer
+            
         </footer>
     </body>
 
