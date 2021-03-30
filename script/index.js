@@ -16,19 +16,9 @@ $(document).ready(function(){
  //Ce code sera exécuté en cas de succès - La réponse du serveur est passée à done()
 
     /*La réponse est un tableau d'objet d'article*/
-    .done(function(response){
+    .done( function (response) {
+        fillFeed(response); 
 
-    //Boucle pour afficher chacun des posts
-    response.forEach(post => {
-        $(".post-feed").after('\
-                <div class="post">\
-                    <quote class="post-content">' + post.content['rendered'] +'</quote>\
-                    <h4 class="post-author">' + post.title['rendered'] + '</h4>\
-                    <p class="post-date">' + post['date']+ '</p>\
-                </div>'); 
-    });
-
-        
     })
 
     //Ce code sera exécuté en cas d'échec - L'erreur est passée à fail()
@@ -41,6 +31,23 @@ $(document).ready(function(){
     .always(function(){
     
     });
+
+    /* ------ FONCTION POUR REMPLIR LE FEED ------ */
+
+    function fillFeed(response) {
+
+            //Boucle pour afficher chacun des posts
+            response.forEach(post => {
+                $(".post-feed").after('\
+                        <div class="post">\
+                            <quote class="post-content">' + post.content['rendered'] +'</quote>\
+                            <h4 class="post-author">' + post.title['rendered'] + '</h4>\
+                            <p class="post-date">' + post['date']+ '</p>\
+                        </div>'); 
+            });
+
+    }
+
 
     /* ------ TRAITEMENT DU PLUGGIN POUR LE CARROUSEL ------ */
 
@@ -70,8 +77,6 @@ $(document).ready(function(){
    
     //Récupérer les données du formulaire pour les afficher dans le feed
     
-    //Déclaration des variables de l'input utilisateurs
-    
 
     $("#formSubmit").on("click", function() {
         const inputName = document.forms["myForm"].elements["postName"].value;
@@ -83,7 +88,7 @@ $(document).ready(function(){
                     <quote class="post-content">' + inputContent +'</quote>\
                     <h4 class="post-author">' + inputName + '</h4>\
                     <p class="post-date">' + inputDate + '</p>\
-                </div>'); 
+                </div>');
     
     });
 
