@@ -98,7 +98,7 @@ footer {
   }
 
   .dropbtn:hover, .dropbtn:focus {
-    opacity: 0.8;
+    background-color: #ddd;
   }
 
 .dropdown-content {
@@ -108,18 +108,23 @@ footer {
     min-width: 1rem;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    margin: 0 auto;
+    font-family: Playfair Display, serif;
 }    
 
 .dropdown-content a {
-        color: black;
+        color: white;
         padding: 1rem;
-        text-decoration: none;
         display: block;
+        text-decoration: none;
 } 
 
-.dropdown-content a:hover {background-color: grey}  
-.show {display:block;}
+.dropdown-content a:hover {
+    background-color: #ddd;
+
+}  
+.show {
+    display:block;
+}
     
 
   /* Classe dédiée au test des selecteurs js */
