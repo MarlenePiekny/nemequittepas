@@ -60,12 +60,31 @@ $(document).ready(function(){
 
     /* ------ TRAITEMENT DU FORMULAIRE ------ */
 
-    //Récupérer les données du formulaire pour les mettre dans la console
+    /*Récupérer les données du formulaire pour les mettre dans la console
     $("#formSubmit").on("click", function() {
         console.log(document.forms["myForm"].elements["postName"].value);
         console.log(document.forms["myForm"].elements["postContent"].value);
         console.log(document.forms["myForm"].elements["postDate"].value);
     });
+    */
    
+    //Récupérer les données du formulaire pour les afficher dans le feed
+    
+    //Déclaration des variables de l'input utilisateurs
+    
+
+    $("#formSubmit").on("click", function() {
+        const inputName = document.forms["myForm"].elements["postName"].value;
+        const inputContent = document.forms["myForm"].elements["postContent"].value;
+        const inputDate = document.forms["myForm"].elements["postDate"].value;
+        
+        $(".post-feed").after('\
+                <div class="post">\
+                    <quote class="post-content">' + inputContent +'</quote>\
+                    <h4 class="post-author">' + inputName + '</h4>\
+                    <p class="post-date">' + inputDate + '</p>\
+                </div>'); 
+    
+    });
 
 });
