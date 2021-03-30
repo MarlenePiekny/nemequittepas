@@ -57,7 +57,19 @@
                     
                 </div>
             </div> 
-         
+            
+            <div>
+                <h2>Je souhaite ajouter une citation</h2>
+                <form id="myForm" class="container form">
+                    <label for="postName">Mon nom :</label>
+                    <input id="postName">
+                    <label for="postContent">Ma citation :</label>
+                    <textarea></textarea>
+                    <label for="postDate">La date de publication:</label>
+                    <input id="postDate" type="datetime-local" value="2021-03-30T12:00">
+                    <button type="button" onclick="sendData({test:'ok'})">Envoyer ma citation</button>
+                </form>
+            </div>
 
             <div>
                 <h2>Voici les dernières citations</h2>
