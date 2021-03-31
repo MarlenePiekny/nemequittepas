@@ -15,24 +15,40 @@ $(document).ready(function(){
 
  //Ce code sera exécuté en cas de succès - La réponse du serveur est passée à done()
 
-    /*La réponse est un tableau d'objet d'article*/
+    //La réponse est un tableau d'objet d'article
     .done( function (response) {
         fillFeed(response); 
-
     })
 
     //Ce code sera exécuté en cas d'échec - L'erreur est passée à fail()
-    //On peut afficher les informations relatives à la requête et à l'erreur
     .fail(function(error){
+        //On peut afficher les informations relatives à la requête et à l'erreur
         alert("La requête s'est terminée en échec. Infos : " + JSON.stringify(error));
     })
 
     //Ce code sera exécuté que la requête soit un succès ou un échec
     .always(function(){
-    
     });
 
-    /* ------ FONCTION POUR REMPLIR LE FEED ------ */
+
+
+
+    /* ------ TRAITEMENT POUR RAFRAICHIR LE FEED ------ */
+    
+    /*$('.picto-refresh').on("click", $.ajax({
+        url: "https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand",
+        method: "GET",
+        dataType : "json",
+    }).done( function(response) {
+        console.log(response);
+        //fillFeed(response);
+    }));*/
+
+    /* ------ TRAITEMENT POUR SUPPRIMER LE FEED ------ */
+
+    
+
+    /* FONCTION POUR REMPLIR LE FEED  */
 
     function fillFeed(response) {
 
@@ -59,7 +75,6 @@ $(document).ready(function(){
 
     /* ------ TRAITEMENT DU DROPDOWN MENU ------ */
 
-    
     //Fonction qui active les éléments contenus dans la classe dropdown-content
     $(".dropbtn").on("click", function() {
         document.getElementById("myDropdown").classList.toggle("show");
@@ -77,7 +92,6 @@ $(document).ready(function(){
    
     //Récupérer les données du formulaire pour les afficher dans le feed
     
-
     $("#formSubmit").on("click", function() {
         const inputName = document.forms["myForm"].elements["postName"].value;
         const inputContent = document.forms["myForm"].elements["postContent"].value;
