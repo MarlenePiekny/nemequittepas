@@ -56,8 +56,27 @@ footer {
 
 /* Feed */
 
+.container-picto {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.picto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-picto {
+    margin-bottom: 1rem ;
+    border: none;
+    background-color: transparent;
+}
 .post {
     border : 1px solid black ;
+    background-color: white;
     justify-content : space-evenly;
     margin : 1rem;
     padding: 1rem;
@@ -65,9 +84,9 @@ footer {
     height: auto;
 }
 
+
+
 /* Carrousel */
-
-
 
 .img-carousel {
     display : flex;
@@ -126,6 +145,26 @@ footer {
     display:block;
 }
     
+/* Forumaire */
+
+.form {
+    height: 18rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form > input {
+    height: 2rem;
+}
+
+.form button {
+    margin-top: 2rem;
+    height: 2rem;
+    font-family: Playfair Display, serif;
+    font-size: 1rem;
+    background-color: #B9CDD2;
+}
+
 
   /* Classe dédiée au test des selecteurs js */
 .jsselected {

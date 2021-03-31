@@ -57,10 +57,37 @@
                     
                 </div>
             </div> 
-         
+            
+            <div>
+                <h2>Je souhaite ajouter une citation</h2>
+                <form id="myForm" class="container form">
+                    <label for="postName">Mon nom :</label>
+                    <input id="postName" name="postName">
+                    <label for="postContent">Ma citation :</label>
+                    <textarea id="postContent" name="postContent"></textarea>
+                    <label for="postDate">La date de publication:</label>
+                    <input id="postDate" name="postDate" type="datetime-local" value="2021-03-30T12:00">
+                    <button type="button" id="formSubmit">Envoyer ma citation</button>
+                </form>
+            </div>
 
             <div>
                 <h2>Voici les dernières citations</h2>
+                <div class="container-picto">
+                    <figure class="picto">
+                        <button class="single-picto picto-delete">
+                            <img src="/image/picto/delete.svg" width="50">
+                        </button>
+                        <figcaption>effacer</figcaption>
+                    </figure>
+                    <figure class="picto">
+                        <button class="single-picto picto-refresh">
+                            <img src="/image/picto/refresh.svg" width="50">
+                        </button>
+                        <figcaption>rafraîchir</figcaption>
+                    </figure>
+                </div>
+
                 <div class="post-feed container ">
                     <!-- JS boucle pour afficher les posts
                     <div class="post">
