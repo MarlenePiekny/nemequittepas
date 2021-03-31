@@ -99,7 +99,6 @@ footer {
 
 /* Menu dropdown */
 
-
 .dropdown {
     position : sticky;
     top : 0;
@@ -165,8 +164,29 @@ footer {
     background-color: #B9CDD2;
 }
 
+/* Galerie */
 
-  /* Classe dédiée au test des selecteurs js */
+.line{
+    display : flex;
+    flex-direction: column;
+}
+
+.colonne {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.colonne img {
+    width: 35%;
+}
+
+.img-gallery {
+    margin: 1rem;
+}
+
+  /* Classe dédiée au test des selecteurs js 
 .jsselected {
     border : 5px solid red;
 }
+

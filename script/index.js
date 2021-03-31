@@ -1,7 +1,27 @@
 //Lecture du DOM avant de faire intervenir le script
 $(document).ready(function(){
 
-    /* ------ TRAITEMENT API POUR LE FEED------ */
+    /* FONCTION POUR LES API VIA AJAX 
+
+    function callAPI (givenURL) {
+        $.ajax({
+            url: givenURL,
+            method: "GET",
+            dataType: "json",
+        })
+        .done(function(reponse)) {
+
+        }
+        .fail(function(error)) {
+
+        }
+        .always(function)) {
+
+        }
+    };
+    */
+
+    /* ------ TRAITEMENT API POUR LE FEED CITATIONS ------ */
 
     //Appel de l'API via ajax
     $.ajax({
@@ -16,8 +36,8 @@ $(document).ready(function(){
  //Ce code sera exécuté en cas de succès - La réponse du serveur est passée à done()
 
     //La réponse est un tableau d'objet d'article
-    .done( function (response) {
-        fillFeed(response); 
+    .done(function (responseQuote) {
+        fillFeed(responseQuote);
     })
 
     //Ce code sera exécuté en cas d'échec - L'erreur est passée à fail()
@@ -29,9 +49,6 @@ $(document).ready(function(){
     //Ce code sera exécuté que la requête soit un succès ou un échec
     .always(function(){
     });
-
-
-
 
     /* ------ TRAITEMENT POUR RAFRAICHIR LE FEED ------ */
     
@@ -63,7 +80,6 @@ $(document).ready(function(){
             });
 
     }
-
 
     /* ------ TRAITEMENT DU PLUGGIN POUR LE CARROUSEL ------ */
 
@@ -105,5 +121,34 @@ $(document).ready(function(){
                 </div>');
     
     });
+
+    /* ------ TRAITEMENT DE L'AFFICHAGE GALERIE ------ */
+
+    //Déclaration du tableau d'images
+    const gallery = [
+        "/image/galery/photo-0.jpeg",
+        "/image/galery/photo-1.jpeg",
+        "/image/galery/photo-2.jpeg",
+        "/image/galery/photo-3.jpeg",
+        "/image/galery/photo-5.jpeg"
+    ];
+
+    //Boucle pour afficher autant de photos qu'il y a d'éléments dans la tableau
+    gallery.forEach(picture => {
+        console.log(picture);
+        $("#gallery").append('<img class="img-gallery" src=" ' + picture + ' ">');
+    });
+
+    $('#btn-line').on("click", function() {
+        $('#gallery').removeClass("colonne");
+        $('#gallery').addClass("line");
+    });
+
+    $('#btn-square').on("click", function() {
+        $('#gallery').removeClass("line");
+        $('#gallery').addClass("colonne");
+    });
+    
+
 
 });
