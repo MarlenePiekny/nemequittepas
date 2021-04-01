@@ -65,14 +65,24 @@ $(document).ready(function(){
         reloadFeed();
     });
 
-    /* ------ TRAITEMENT POUR SUPPRIMER LE FEED ------ */
+    /* ------ TRAITEMENT POUR SUPPRIMER UN POST ------ */
 
+    $('.picto-delete').on("click", function() {
+        //Afficher à l'utilisateur ce qu'il doit faire
+        $(".post-feed").after('\
+                        <span class="instruction">Cliquer sur la citation à supprimer\
+                        </span');
+        $(".post").mousedown(function(){
+            //On supprime la div du post sur laquelle on vient de cliquer et on enlève l'instruction
+            $(this).remove();
+            $('.instruction').remove();
+        });
+    });
     
 
     /* FONCTION POUR REMPLIR LE FEED  */
 
     function fillFeed(response) {
-
             //Boucle pour afficher chacun des posts
             response.forEach(post => {
                 $(".post-feed").after('\
