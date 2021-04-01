@@ -23,6 +23,11 @@ $(document).ready(function(){
 
     /* ------ TRAITEMENT API POUR LE FEED CITATIONS ------ */
 
+    function reloadFeed() {
+
+    //Enlever le contenu existant
+    document.querySelectorAll(".post").forEach(el => el.remove());
+
     //Appel de l'API via ajax
     $.ajax({
         //L'URL de la requête 
@@ -50,16 +55,15 @@ $(document).ready(function(){
     .always(function(){
     });
 
+    }
+
+    reloadFeed();
+
     /* ------ TRAITEMENT POUR RAFRAICHIR LE FEED ------ */
     
-    /*$('.picto-refresh').on("click", $.ajax({
-        url: "https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand",
-        method: "GET",
-        dataType : "json",
-    }).done( function(response) {
-        console.log(response);
-        //fillFeed(response);
-    }));*/
+    $('.picto-refresh').on("click", function() {
+        reloadFeed();
+    });
 
     /* ------ TRAITEMENT POUR SUPPRIMER LE FEED ------ */
 
@@ -108,10 +112,10 @@ $(document).ready(function(){
    
     //Récupérer les données du formulaire pour les afficher dans le feed
     
-    $("#formSubmit").on("click", function() {
-        const inputName = document.forms["myForm"].elements["postName"].value;
-        const inputContent = document.forms["myForm"].elements["postContent"].value;
-        const inputDate = document.forms["myForm"].elements["postDate"].value;
+    $("#formPostSubmit").on("click", function() {
+        const inputName = document.forms["myPostForm"].elements["postName"].value;
+        const inputContent = document.forms["myPostForm"].elements["postContent"].value;
+        const inputDate = document.forms["myPostForm"].elements["postDate"].value;
         
         $(".post-feed").after('\
                 <div class="post">\
@@ -135,7 +139,6 @@ $(document).ready(function(){
 
     //Boucle pour afficher autant de photos qu'il y a d'éléments dans la tableau
     gallery.forEach(picture => {
-        console.log(picture);
         $("#gallery").append('<img class="img-gallery" src=" ' + picture + ' ">');
     });
 
@@ -149,6 +152,12 @@ $(document).ready(function(){
         $('#gallery').addClass("colonne");
     });
     
+    /* ------ TRAITEMENT DE L'AJOUT D'UNE PHOTO ------ */
 
+    $('#formPictureSubmit').on("click", function() {
+        const inputURL = (document.forms['myPictureForm'].elements['pictureURL'].value);
+        $("#gallery").append('<img class="img-gallery" src=" ' + inputURL + ' ">');
+    });
+    
 
 });

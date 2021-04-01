@@ -12,7 +12,6 @@ body {
     margin: 0;
 }   
 
-
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     text-align: left;
@@ -84,8 +83,6 @@ footer {
     height: auto;
 }
 
-
-
 /* Carrousel */
 
 .img-carousel {
@@ -144,10 +141,10 @@ footer {
     display:block;
 }
     
-/* Forumaire */
+/* Formulaire */
 
 .form {
-    height: 18rem;
+    
     display: flex;
     justify-content: space-between;
 }
@@ -162,6 +159,10 @@ footer {
     font-family: Playfair Display, serif;
     font-size: 1rem;
     background-color: #B9CDD2;
+}
+
+.form label {
+    margin-top: 1rem;
 }
 
 /* Galerie */
@@ -179,14 +180,20 @@ footer {
 
 .colonne img {
     width: 35%;
+    height: auto;
 }
 
 .img-gallery {
     margin: 1rem;
 }
 
-  /* Classe dédiée au test des selecteurs js 
+.pictureForm {
+    margin-bottom: 2rem;
+}
+
+/*Classe dédiée au test des selecteurs js */
 .jsselected {
     border : 5px solid red;
 }
+
 
