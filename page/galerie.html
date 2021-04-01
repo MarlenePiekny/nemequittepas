@@ -48,19 +48,19 @@
         </div>
         <div class="container-picto">
             <figure class="picto">
-                <button id="btn-line"class="single-picto picto-line ">
-                    <img src="/image/picto/layout_line.svg" width="50">
+                <button id="btn-add" class="single-picto picto-add ">
+                    <img src=" /image/picto/add.svg" width="50">
                 </button>
-                <figcaption>one by one</figcaption>
+                <figcaption>ajouter</figcaption>
             </figure>
             <figure class="picto">
-                <button id="btn-square" class="single-picto picto-square ">
-                    <img src=" /image/picto/layout_square.svg" width="50">
+                <button id="btn-delete" class="single-picto picto-delete">
+                    <img src="/image/picto/delete.svg" width="50">
                 </button>
-                <figcaption>in pairs</figcaption>
+                <figcaption>effacer</figcaption>
             </figure>
         </div>
-        <div>
+        <div id="addPictureForm" class="hidden">
             <h2>Je souhaite ajouter une photo</h2>
             <form id="myPictureForm" class="container form">
                 <label for="pictureURL">L'URL de ma photo :</label>
@@ -68,8 +68,23 @@
                 <button type="button" id="formPictureSubmit">Ajouter ma photo</button>
             </form>
         </div>
+        
         <div>
             <h2>Voici quelques photos</h2> 
+        </div>
+        <div class="container-picto">
+            <figure class="picto">
+                <button id="btn-line"class="single-picto picto-line ">
+                    <img src="/image/picto/layout_line.svg" width="50">
+                </button>
+                <figcaption>un à un</figcaption>
+            </figure>
+            <figure class="picto">
+                <button id="btn-square" class="single-picto picto-square ">
+                    <img src=" /image/picto/layout_square.svg" width="50">
+                </button>
+                <figcaption>par deux</figcaption>
+            </figure>
         </div>
 
         <div id="gallery" class="line">

@@ -111,14 +111,6 @@ $(document).ready(function(){
     });
 
     /* ------ TRAITEMENT DU FORMULAIRE ------ */
-
-    /*Récupérer les données du formulaire pour les mettre dans la console
-    $("#formSubmit").on("click", function() {
-        console.log(document.forms["myForm"].elements["postName"].value);
-        console.log(document.forms["myForm"].elements["postContent"].value);
-        console.log(document.forms["myForm"].elements["postDate"].value);
-    });
-    */
    
     //Récupérer les données du formulaire pour les afficher dans le feed
     
@@ -164,10 +156,29 @@ $(document).ready(function(){
     
     /* ------ TRAITEMENT DE L'AJOUT D'UNE PHOTO ------ */
 
+    //Ajout du bloc formulaire
+    $('#btn-add').on("click", function() {
+        $('#addPictureForm').toggle('hidden');
+    });
+
+    //Ajout de la photo à la galerie
     $('#formPictureSubmit').on("click", function() {
         const inputURL = (document.forms['myPictureForm'].elements['pictureURL'].value);
         $("#gallery").append('<img class="img-gallery" src=" ' + inputURL + ' ">');
     });
     
+    /* ------ TRAITEMENT DE LA SUPPRESION D'UNE PHOTO ------ */
+
+    $('#btn-delete').on("click", function() {
+        //Afficher à l'utilisateur ce qu'il doit faire
+        $("#gallery").before('\
+                        <span class="instruction">Cliquer sur la photo à supprimer\
+                        </span');
+        $(".img-gallery").mousedown(function(){
+            //On supprime la div du post sur laquelle on vient de cliquer et on enlève l'instruction
+            $(this).remove();
+            $('.instruction').remove();
+        });
+    });
 
 });
