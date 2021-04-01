@@ -192,6 +192,10 @@ footer {
     margin-bottom: 2rem;
 }
 
+.hidden {
+    display : none;
+}
+
 /*Classe dédiée au test des selecteurs js */
 .jsselected {
     border : 5px solid red;
