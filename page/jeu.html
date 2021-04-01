@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Accueil | Projet js</title>
-        <meta name=description" content="Bienvenue sur la page d'accueil de mon site">
+        <meta name="description" content="Bienvenue sur la page d'accueil de mon site">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Playfair+Display&display=swap" rel="stylesheet">
         <link rel="shortcut icon" type="image/x-icon" href="/image/favicon/favicon.ico">
@@ -41,10 +41,51 @@
             </div>
           </div>
         
-          <section class="page jeu">
+        <section class="page jeu">
             <div>
                 <h1>Bienvenue sur le jeu du pierre feuille ciseaux</h1>
             </div>
+
+            <div>
+                <h2>Je fais mon choix</h2>
+            </div>
+            <div id="game-picto" class="container-picto">
+                <figure class="picto">
+                    <button id="btn-rock" class="single-picto picto-rock">
+                        <img src="/image/picto/stone.svg" width="50">
+                    </button>
+                    <figcaption>pierre</figcaption>
+                </figure>
+                <figure class="picto">
+                    <button id="btn-paper" class="single-picto picto-paper">
+                        <img src="/image/picto/file.svg" width="50">
+                    </button>
+                    <figcaption>feuille</figcaption>
+                </figure>
+                <figure class="picto">
+                    <button id="btn-scissors" class="single-picto picto-scissors">
+                        <img src="/image/picto/scissors.svg" width="50">
+                    </button>
+                    <figcaption>ciseaux</figcaption>
+                </figure>
+            </div>
+
+            <div>
+                <h2>Résultat</h2>
+                <p id="gameResult">Vous avez gagné!</p>
+                <div id="result-game-picto" class="container-picto">
+                    <figure class="picto">
+                        <img src="/image/picto/stone.svg" width="50">
+                        <figcaption>Mon choix</figcaption>
+                    </figure>
+                    <figure class="picto">
+                        <img src="/image/picto/file.svg" width="50">
+                        <figcaption>Choix de l'ordinateur</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+
     
             
         </section>
