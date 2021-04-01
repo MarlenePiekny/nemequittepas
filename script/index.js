@@ -108,7 +108,7 @@ $(document).ready(function(){
    
     //Récupérer les données du formulaire pour les afficher dans le feed
     
-    $("#formSubmit").on("click", function() {
+    $("#formPostSubmit").on("click", function() {
         const inputName = document.forms["myForm"].elements["postName"].value;
         const inputContent = document.forms["myForm"].elements["postContent"].value;
         const inputDate = document.forms["myForm"].elements["postDate"].value;
@@ -149,6 +149,8 @@ $(document).ready(function(){
         $('#gallery').addClass("colonne");
     });
     
+    /* ------ TRAITEMENT DE L'AJOUT D'UNE PHOTO ------ */
 
+    
 
 });
