@@ -197,7 +197,7 @@ footer {
     display : none;
 }
 
-/* Jeu */
+/* Jeu du pierre feuille ciseaux*/
 
 #game-picto {
     justify-content: center;
@@ -215,6 +215,18 @@ footer {
 #result-game-picto img{
     margin-bottom: 1rem;
 }
+
+/* Jeu du pierre feuille ciseaux*/
+
+#memoryCards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: solid 5px blue;
+}
+
 
 /*Classe dédiée au test des selecteurs js */
 
