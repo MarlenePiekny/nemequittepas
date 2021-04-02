@@ -1,26 +1,6 @@
 //Lecture du DOM avant de faire intervenir le script
 $(document).ready(function(){
 
-    /* FONCTION POUR LES API VIA AJAX 
-
-    function callAPI (givenURL) {
-        $.ajax({
-            url: givenURL,
-            method: "GET",
-            dataType: "json",
-        })
-        .done(function(reponse)) {
-
-        }
-        .fail(function(error)) {
-
-        }
-        .always(function)) {
-
-        }
-    };
-    */
-
     /* ------ TRAITEMENT API POUR LE FEED CITATIONS ------ */
 
     function reloadFeed() {
@@ -181,8 +161,101 @@ $(document).ready(function(){
         });
     });
 
-    /* ------ TRAITEMENT DE LA SUPPRESION D'UNE PHOTO ------ 
-    ( $('#btn-rock') || $('#btn-paper'|| $('#btn-scissors') ).on("click", function() {
+    /* ------ TRAITEMENT DU JEU ------ */
+
+    var playerChoice = '';
+    var computerChoice = '';
+    
+    $('.picto-game').on("click", function() {
+
+        //Affectation de playerChoice selon l'élément cliqué par l'utilisateur
+        playerChoice = $(this).attr('id');
+
+
+        //Affectation de computerChoice aléatoirement
+        let computerRandom = Math.floor(Math.random() * 3);
+        const computerTab = ['rock', 'paper', 'scissors'];
+        computerChoice = computerTab [computerRandom];
+
+        //Traitement selon les combinaisons de l'utilisateurs et de l'ordinateur et affichage dans 
+        
+
+        //Afficher les choix et le résultat
+        console.log(playerChoice);
+        console.log(computerChoice);
+        console.log(findWinner(playerChoice, computerChoice));
+
+        $("#gameResult").after('\
+            <h2>Résultat</h2>\
+            <p>' + findWinner(playerChoice, computerChoice) + '</p>\
+            <div id="result-game-picto" class="container-picto">\
+                <figure class="picto">\
+                    <img src="/image/picto/' + playerChoice +'.svg" width="50">\
+                    <figcaption>Mon choix</figcaption>\
+                </figure>\
+                <figure class="picto">\
+                    <img src="/image/picto/' + computerChoice + '.svg" width="50">\
+                    <figcaption>Choix de l ordinateur</figcaption>\
+                </figure>\
+            </div>\
+        ');
+
+    });
+
+
+
+    function findWinner(playerChoice, computerChoice) {
+        if (playerChoice === computerChoice) {
+            return "C'est une égalité :|";
+        } else if (playerChoice === "rock") {
+                if (computerChoice === "scissors") {
+                    return "Bravo, vous avez gagné :) ";
+                } else {
+                    return "Mince, vous avez perdu :( ";
+                }
+        } else if (playerChoice === "paper") {
+                if (computerChoice === "rock") {
+                    return "Bravo, vous avez gagné :) ";
+                } else {
+                    return "Mince, vous avez perdu :( ";
+                }
+        } else if (playerChoice === "scissors") {
+                if (computerChoice === "paper") {
+                    return "Bravo, vous avez gagné :) ";
+                } else {
+                    return "Mince, vous avez perdu :( ";
+                }
+        } else {
+            return "Oups, there is an issue, this case wouldn't happen";
+        }
+    }
+
+    /* ------ DEUXIEME LOGIQUE ------ 
+
+
+    var playerChoice = '';
+
+    $('#btn-rock').on("click", function() {
+        playerChoice = 'rock';
+    });
+
+    $('#btn-paper').on("click", function() {
+        layerChoice = 'paper';
+    });
+
+    $('#btn-scissors').on("click", function() {
+        playerChoice = 'scissors';
+    });
+
+    */
+
+
+
+
+
+
+
+    /*( $('#btn-rock') || $('#btn-paper'|| $('#btn-scissors') ).on("click", function() {
         console.log('Coucou');
     )};*/
 });

@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jeu| Projet js</title>
+        <title>Jeu | Projet js</title>
         <meta name="description" content="Bienvenue sur la page de jeu de mon site. Ici vous pourrez jouer au pierre, feuille, ciseaux contre l'ordinateur.">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Cousine&family=Playfair+Display&display=swap" rel="stylesheet">
@@ -14,7 +14,13 @@
         <!-- bibliothèque jquery et script js-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="/script/index.js" defer></script>
-    
+        
+        <!--meta pour carrousel-->
+        <link rel="stylesheet" type="text/css" href="/resource/slick-1.8.1/slick/slick.css"/> <!-- css slick-->
+        <link rel="stylesheet" type="text/css" href="/resource/slick-1.8.1/slick/slick-theme.css"/> <!-- css slick par défaut-->
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js" defer></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js" defer></script>
+        <script type="text/javascript" src="/resource/slick-1.8.1/slick/slick.min.js" defer></script>
     </head>
 
     <body>
@@ -44,38 +50,28 @@
             </div>
             <div id="game-picto" class="container-picto">
                 <figure class="picto">
-                    <button id="btn-rock" class="single-picto picto-rock">
-                        <img src="/image/picto/stone.svg" width="50">
+                    <button id="rock" class="single-picto picto-game picto-rock">
+                        <img src="/image/picto/rock.svg" width="50">
                     </button>
                     <figcaption>pierre</figcaption>
                 </figure>
                 <figure class="picto">
-                    <button id="btn-paper" class="single-picto picto-paper">
-                        <img src="/image/picto/file.svg" width="50">
+                    <button id="paper" class="single-picto picto-game picto-paper">
+                        <img src="/image/picto/paper.svg" width="50">
                     </button>
                     <figcaption>feuille</figcaption>
                 </figure>
                 <figure class="picto">
-                    <button id="btn-scissors" class="single-picto picto-scissors">
+                    <button id="scissors" class="single-picto picto-game picto-scissors">
                         <img src="/image/picto/scissors.svg" width="50">
                     </button>
                     <figcaption>ciseaux</figcaption>
                 </figure>
             </div>
 
-            <div>
-                <h2>Résultat</h2>
-                <p id="gameResult">Vous avez perdu :(</p>
-                <div id="result-game-picto" class="container-picto">
-                    <figure class="picto">
-                        <img src="/image/picto/stone.svg" width="50">
-                        <figcaption>Mon choix</figcaption>
-                    </figure>
-                    <figure class="picto">
-                        <img src="/image/picto/file.svg" width="50">
-                        <figcaption>Choix de l'ordinateur</figcaption>
-                    </figure>
-                </div>
+            <div id="gameResult">
+                
+                
             </div>
 
 
