@@ -181,4 +181,8 @@ $(document).ready(function(){
         });
     });
 
+    /* ------ TRAITEMENT DE LA SUPPRESION D'UNE PHOTO ------ 
+    ( $('#btn-rock') || $('#btn-paper'|| $('#btn-scissors') ).on("click", function() {
+        console.log('Coucou');
+    )};*/
 });
