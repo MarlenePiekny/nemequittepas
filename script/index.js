@@ -96,8 +96,8 @@ $(document).ready(function(){
     
     $("#formPostSubmit").on("click", function() {
         const inputName = document.forms["myPostForm"].elements["postName"].value;
-        const inputContent = document.forms["myPostForm"].elements["postContent"].value;
-        const inputDate = document.forms["myPostForm"].elements["postDate"].value;
+        const inputContent = document.getElementById("postContent").value;
+        const inputDate = $("#postDate").val();
         
         $(".post-feed").after('\
                 <div class="post">\
@@ -168,24 +168,17 @@ $(document).ready(function(){
     
     $('.picto-game').on("click", function() {
 
+        //Enlever les résultats
+        $("#gameResult").empty();
+
         //Affectation de playerChoice selon l'élément cliqué par l'utilisateur
         playerChoice = $(this).attr('id');
 
-
         //Affectation de computerChoice aléatoirement
-        let computerRandom = Math.floor(Math.random() * 3);
-        const computerTab = ['rock', 'paper', 'scissors'];
-        computerChoice = computerTab [computerRandom];
-
-        //Traitement selon les combinaisons de l'utilisateurs et de l'ordinateur et affichage dans 
-        
+        computerChoice = randomShifumi();
 
         //Afficher les choix et le résultat
-        console.log(playerChoice);
-        console.log(computerChoice);
-        console.log(findWinner(playerChoice, computerChoice));
-
-        $("#gameResult").after('\
+        $("#gameResult").append('\
             <h2>Résultat</h2>\
             <p>' + findWinner(playerChoice, computerChoice) + '</p>\
             <div id="result-game-picto" class="container-picto">\
@@ -202,7 +195,11 @@ $(document).ready(function(){
 
     });
 
-
+    const randomShifumi = () => {
+        let computerRandom = Math.floor(Math.random() * 3);
+        const computerTab = ['rock', 'paper', 'scissors'];
+        return computerTab[computerRandom];
+    }
 
     function findWinner(playerChoice, computerChoice) {
         if (playerChoice === computerChoice) {
@@ -230,32 +227,4 @@ $(document).ready(function(){
         }
     }
 
-    /* ------ DEUXIEME LOGIQUE ------ 
-
-
-    var playerChoice = '';
-
-    $('#btn-rock').on("click", function() {
-        playerChoice = 'rock';
-    });
-
-    $('#btn-paper').on("click", function() {
-        layerChoice = 'paper';
-    });
-
-    $('#btn-scissors').on("click", function() {
-        playerChoice = 'scissors';
-    });
-
-    */
-
-
-
-
-
-
-
-    /*( $('#btn-rock') || $('#btn-paper'|| $('#btn-scissors') ).on("click", function() {
-        console.log('Coucou');
-    )};*/
 });

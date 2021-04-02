@@ -205,7 +205,7 @@ footer {
 
 #gameResult {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 #result-game-picto {
@@ -217,6 +217,7 @@ footer {
 }
 
 /*Classe dédiée au test des selecteurs js */
+
 .jsselected {
     border : 5px solid red;
 }
